@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/imgs/head/20190401112730.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/cart.css">
+    <title>我的购物车页-穿越火线周边商城</title>
+</head>
+
+<body>
+    <div id="headerpage"></div>
+    <!-- 中间部分 -->
+    <div class="cartContainer">
+        <div class="mycart-th">
+            <span class="goodInfo">商品信息</span>
+            <span class="price">单价(元)</span>
+            <span class="num">数量</span>
+            <span class="allMoney">金额(元)</span>
+            <span class="operate">操作</span>
+        </div>
+        <div class="mycart-shop">
+            <em id="checkAll"><i></i></em>
+            全选<span id="shop_name"></span>
+        </div>
+        <ul class="mycart-list">
+            <script type="text/html" id="mycart_item">
+                {{each goodsinfo item}}
+                <li class="mycart-item">
+                    <span class="checkBox"><i></i></span>
+                    <img src="{{item.img}}" alt="">
+                    <span class="item_name">{{item.goodName}}</span>
+                    <div class="f1">{{item.shopName}}</div>
+                    <div class="item_price">
+                        <em class="item_old_price">{{item.old_price}}元</em>
+                        <span>{{item.price}}元</span>
+                    </div>
+                    <div class="buyNums" data-id="{{item.id}}">
+                        <i class="reduce">-</i>
+                        <input type="text" value="1">
+                        <span style="display:none;">{{item.buyNums}}</span>
+                        <i class="plus add">+</i>
+                    </div>
+                    <span class="money">{{(item.price-0).toFixed(2)}}元</span>
+                    <div class="operate">
+                        <a href="javascript:;" class="delBtn">删除</a>
+                        <a href="javascript:;">移入收藏夹</a>
+                    </div>
+                </li>
+                {{/each}}
+            </script>
+        </ul>
+        <div class="mycart-tb">
+            <a href="/html/pay.html" id="mycart-tb-btn">去结算</a>
+            <div class="mycart-tb-info">
+                <p>已选商品<span id="buy_nums">0</span>件 总价:<span id="total_price">0.00元</span></p>
+                <p>不含运费和其他优惠</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="no_goods">
+        <h2>购物车空空如也，赶紧选购我们的商品吧！<span>【去逛逛】</span></h2>
+    </div>
+    <div id="footerpage"></div>
+    <!-- loding -->
+    <div id="test_mask" class="test_mask"></div>
+    <script src="/libs/require/require.js" data-main="/js/cart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk"/>
+    <meta name="robots" content="all"/>
+    <meta name="author" content="Tencent"/>
+    <title>商品列表-穿越火线周边商城</title>
+        <meta name="Description" content="穿越火线精美周边，正版授权好礼多多。"/>            <meta name="Keywords" content="道聚城周边商城，道聚城穿越火线周边商城，道聚城，道聚城周边，道聚城游戏,游戏周边商城"/>
+        <link rel="stylesheet" href="//js01.daoju.qq.com/zb/common/css/comm.css"/>
+    <link rel="stylesheet" href="//js01.daoju.qq.com/zb/common/css/prodlist.css"/>
+    <link rel="stylesheet" href="//js01.daoju.qq.com/zb/cf/css/theme.css"/>
+    <style>
+        .pro-none{
+            height: 300px;
+            background: url(//js01.daoju.qq.com/zb/mall/images/pro-none.png) no-repeat top;
+            font-size: 24px;
+            text-align: center;
+            padding-top: 200px;
+            color: #666;
+            margin: 250px 0 100px;
+        }
+    </style>
+</head>
+<body>
+
+<script src="//js01.daoju.qq.com/zb/common/js/raven.min.js"></script>
+<script>
+    Raven.config('//af873cbd4c604915bfe20ae8c6208852@report.url.cn/sentry/479').install()
+</script>
+<link rel="stylesheet" href="//js01.daoju.qq.com/zb/common/css/common.css?v=20170727"/>
+<link rel="stylesheet" href="//js01.daoju.qq.com/zb/common/css/style.css"/>
+<link rel="stylesheet" href="//mall.qq.com/fonts/iconfont.css"/>
+<!-- 头部 -->
+<!--[if lt IE 9]>
+<p class="chromeframe">您使用的IE浏览器版本过低，本站不再支持，<a href="//windows.microsoft.com/">升级您的IE浏览器</a>，或使用<a href="https://www.google.com/chrome/thankyou.html?statcb=1&installdataindex=defaultbrowser">Google Chrome</a>、<a href="https://dldir1.qq.com/invc/tt/QQBrowser_Setup_QB10beta.exe">QQ浏览器</a>等高级浏览器，将会得到更好的体验！</p>
+<![endif]-->
+<!--低版本IE提示 S-->
+<!--低版本IE提示 E-->
+<!-- 通用登录栏 -->
+<style>
+    .top-bar .top-info .logo{
+        /*width: 300px;*/
+        margin-left: 40px;
+    }
+    .top-bar .top-info .logo a {
+        display: inline-block;
+        text-indent: -9999em;
+    }
+
+    .top-bar .top-info .logo .logo-lol {
+        margin-top: 10px;
+    }
+    .top-bar .top-info .logo .logo-dnf {
+        margin-top: 10px;
+    }
+    .top-bar .top-info .logo .logo-speed {
+        margin-top: 5px;
+    }
+</style>
+
+<div class="top-bar">
+    <!-- top-bar占位 -->
+    <div class="top-blank"></div>
+    <div class="top-action">
+        <!-- 公告栏 -->
+        <div class="top-notice" style="display:none;">
+            <div class="mid clearfix">
+                <div class="fl ico-comm i-laba"></div>
+                <div class="fl notice-txt" id="blk_header_notice"></div>
+                <script type="text/html" id="tmpl_header_notice">
+                    {if data && data.length>0}
+                    <ul>
+                        {for item in data}
+                        <li>${item.sTitle}，点击<a href="/notice_detail.shtml?noticeid=${item.iSeqId}" target="_blank">查看详情></a></li>
+                        {/for}
+                    </ul>
+                    {/if}
+                </script>
+            </div>
+        </div>
+        <!-- top-info S -->
+        <div class="top-info">
+            <div class="mid clearfix">
+                
+                                
+                
+                                <div class="fl logo">
+                    <a class="logo-cf-up" href="//mall.qq.com/cf" title="穿越火线商城官网" target="_blank">穿越火线周边商城官网</a>
+<!--                    <a href="//mall.qq.com/index.shtml" class="ico-comm i-jcp logo-cf-up-comm">聚诚品</a>-->
+                    <a href="//mall.qq.com/index.shtml" class="ico-comm2 logo-cf-up-comm2" target="_blank">聚诚品</a>
+                </div>
+                                
+                <!--div id="blk_header_search" class="sbar fl">
+                    <div id="s-menu" class="smenu fl">
+                        <input type="text" value="搜索商品" onfocus="this.value=='搜索商品' &amp;&amp; (this.value='')"
+                               onblur="this.value=='' &amp;&amp; (this.value='搜索商品')" id="inpt_header_search">
+                    </div>
+                    <button class="btn" id="btn_header_search"><i class="comicon sico"></i></button>
+                </div-->
+<!--                -->
+<!--                -->
+<!--                -->
+<!--                -->
+<!--                -->
+<!--                -->
+<!--                -->
+
+                <!--<div class="fl ico-comm i-solgan">可以触摸的欢乐时光</div>-->
+
+                <a href="/cf/cart.shtml" class="fr cartbox clearfix" target="_blank">
+                    <i class="fl ico-comm i-cart"></i>
+                    <span>购物车</span>
+                    <span id="blk_header_cart" />
+                </a>
+                <script type="text/html" id="tmpl_header_cart">
+                    {if json && json.data && json.data.list && json.data.total}
+                    <div class="fr cart-num">${json.data.total}</div>
+                    {/if}
+                </script>
+
+                <div class="fr loginbar">
+                    <!-- 登录前 S-->
+                    <div class="unlogin" id="unlogin">
+                        <i class="ico-comm i-person"></i>
+                        <a href="javascript:;" id="btn_header_login" title="立即登录">立即登录</a>
+                    </div>
+                    <!-- 登录前 E-->
+                    <!-- 登录后 S-->
+                    <div class="loginbox clearfix" id="logined" style="display: none;">
+                        <div class="login-info">
+                            <div class="fl hdimg">
+                                <img src="" width="38" height="38" alt="头像">
+                            </div>
+                            <p class="fl hdname"><span id="userinfo"></span></p>
+                        </div>
+                        <div class="top-hover">
+                            <div class="arrow"></div>
+                            <div class="link-list">
+                                
+                                <a href="/myorder.shtml?busid=cf" title="订单管理" target="_blank">
+                                    <i class="fl ico-comm i-order"></i>
+                                    <span>订单管理</span>
+                                </a>
+                                <a href="/address.shtml" title="地址管理" target="_blank">
+                                    <i class="fl ico-comm i-addr"></i>
+                                    <span>地址管理</span>
+                                </a>
+                                <a href="/coupon.shtml?busid=cf" title="优惠卡券" target="_blank">
+                                    <i class="fl ico-comm i-quan"></i>
+                                    <span>优惠卡券</span>
+                                </a>
+                                <a href="/collect.shtml?busid=cf" title="我的收藏" target="_blank">
+                                    <i class="fl ico-comm i-collect"></i>
+                                    <span>我的收藏</span>
+                                </a>
+                                <a href="/sub.shtml?busid=cf" title="订阅管理" target="_blank">
+                                    <i class="fl ico-comm i-subs"></i>
+                                    <span>订阅管理</span>
+                                </a>
+                                <a href="/receive.shtml?busid=cf" title="领取中心" target="_blank">
+                                    <i class="fl ico-comm i-lqcen"></i>
+                                    <span>领取中心</span>
+                                </a>
+                                <a href="javascript:;" class="quit-link" title="退出登录" id="btn_header_logout" >
+                                    <i class="fl ico-comm i-quit"></i>
+                                    <span>退出登录</span>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 登录后 E-->
+                </div>
+                <div class="fr sosobox clearfix" id="blk_header_search">
+                    <a href="javascript:;" class="ico-comm i-search" title="搜索" id="btn_header_search">搜索</a>
+                    <input type="text" class="top-soso" placeholder="请输入想要找的宝贝" id="inpt_header_search"/>
+                </div>
+            </div>
+        </div>
+        <!-- top-info E -->
+        <!-- top-head S -->
+        <div class="top-head">
+            <div class="top-menu">
+                <div class="mid clearfix">
+                    <ul class="fl menulist clearfix" id="blk_header_navbar"></ul>
+                    <script type="text/html" id="tmpl_header_navbar">
+                        {var i=0}
+                        {for item in data}
+                        <li class="cur">
+                        <!-- <a href="${item.sUrl}" class="ico-comm{if item.isSelected} active{/if}" title="${item.sName}" {if item.iOpenType=='1'}target="_blank"{/if}
+                            >${item.sName}</a> -->
+                            <a href="${item.sUrl}" class="ico-comm{if item.isSelected} active{/if}" title="${item.sName}" target="_blank">${item.sName}</a>
+                        </li>
+                        {var i=i+1}
+                        {/for}
+                    </script>
+                    <a href="/cf/productlist.shtml" class="fr all-class" title="全部商品分类" target="_blank">
+                        <span>全部商品分类</span>
+                        <i class="ico-comm i-arrbot"></i><!-- 点击添加i-arrtop -->
+                    </a>
+                </div>
+            </div>
+            <!-- 子菜单 -->
+            <div class="top-submenu">
+                <div class="mid clearfix">
+                    <ul class="submenu-ul" id="blk_header_submenu"></ul>
+                    <script type="text/html" id="tmpl_header_submenu">
+                        {for item in data}
+                        <li class="submenu-li">
+                            <a class="class-name" href="/cf/productlist.shtml?catid=${item.iCatId}" target="_blank">
+                                <img src="${item.sCatIcon}" alt="图标" width="30">
+                                <p>${item.sCatName}</p>
+                            </a>
+                            <ul class="class-list">
+                                {for innerItem in item.childrenList}
+                                <li><a href="/cf/productlist.shtml?catid=${innerItem.iCatId}" target="_blank">${innerItem.sCatName}</a></li>
+                                {/for}
+                            </ul>
+                        </li>
+                        {/for}
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- top-head E -->
+    </div>
+</div>
+
+
+
+
+
+<div id="dj_topinfo"></div>
+<script id="tpl_topinfo"></script>
+
+<div id="blk_header_login"></div>
+<script id="tmpl_header_login"></script>
+
+<div id="blk_header_category"></div>
+<script id="tmpl_header_category"></script>
+
+
+
+
+
+<div class="mid">
+    <div class="breadcrumb" id="blk_productlist_crumbs"></div>
+    <script type="text/html" id="tmpl_productlist_crumbs">
+        <span><a href="index.shtml" target="_blank" class="ibcb-first" style="margin-right:0px;">首页&gt;</a></span>
+        {var i=1}
+        {for item in data}
+        <span>
+            <a href="{if item.href}${item.href}{else}javascript:;{/if}"
+           style="margin-right:0px;{if !item.href}cursor:default;text-decoration: none;{/if} color:#999">${item.name}
+            {if i!=data.length}&gt;{/if}</a>
+        </span>
+        {var i=i+1}
+        {/for}
+    </script>
+
+
+    <!-- pro-list S -->
+    <div class="page-main">
+        <!-- 条件过滤 -->
+        <div class="list-filter">
+            <div id="showip" class="fltbox gm-filter clearfix">
+                <dl id="dj_ipclass_ul">
+
+
+                </dl>
+                <a href="javascript:;" class="btn-filter filter-sq">
+                    <span>收起</span>
+                    <i class="ico-comm i-arrtop"></i><!-- 箭头朝下 i-arrbot-->
+                </a>
+            </div>
+            <div id="showclass" class="fltbox clearfix">
+                <dl id="dj_class_ul">
+
+                </dl>
+            </div>
+            <script type="text/html" id="tpl_ipclass_ul">
+                <dt>游戏/动漫：</dt>
+                <dd  class="cur all" type="all" val="1">全部</dd>
+                {for v in tpl_ipclass_ul}
+                {if v.iParentId !=0}
+                <dd class="${v.class}" type="ip" val="${v.iCatId}">${v.sCatName}</dd>
+                {/if}
+                {/for}
+            </script>
+            <script type="text/html" id="tpl_class_ul">
+                <dt>分类：</dt>
+                <dd  class="cur all" type="all" val="1" >全部</dd>
+                {for v in tpl_class_ul}
+                {if v.iParentId ==0}
+                <dd class="${v.class}" type="cat" val="${v.iCatId}" class="${v.selectType}">${v.sCatName}</dd>
+                {/if}
+                {/for}
+            </script>
+            <div class="fltbox sort-filter clearfix">
+                <dl class="sortdl fl">
+                    <dt>排序：</dt>
+                    <dd class="cur" type="sort" val="iRecRank" sort="desc">默认</dd>
+                    <dd class="flt-arrow" type="sort" val="iPrice">
+                        <span>价格</span>
+                        <i class="ico-comm i-arrgray"></i><!-- 默认全灰点击下面变黑色添加i-arrbbot在点击上面变黑色i-arrbtop-->
+                    </dd>
+                    <dd class="flt-arrow" type="sort" val="dtShowBegin">
+                        <span>新品</span>
+                        <i class="ico-comm i-arrgray"></i><!-- 默认全灰点击下面变黑色添加i-arrbbot在点击上面变黑色i-arrbtop-->
+                    </dd>
+                    <dd class="flt-arrow" type="sort" val="iFavNum">
+                        <span>人气</span>
+                        <i class="ico-comm i-arrgray"></i><!-- 默认全灰点击下面变黑色添加i-arrbbot在点击上面变黑色i-arrbtop-->
+                    </dd>
+                    <dd class="flt-arrow" type="sort" val="iSoldNum">
+                        <span>销量</span>
+                        <i class="ico-comm i-arrgray"></i><!-- 默认全灰点击下面变黑色添加i-arrbbot在点击上面变黑色i-arrbtop-->
+                    </dd>
+                </dl>
+                <dl class="sortdl fr">
+                    <dt>筛选：</dt>
+                    <dd class="flt-check" type="screen" val="2">
+                        <i class="ico-comm i-check"></i><!-- 点击添加i-checked-->
+                        <span>有货</span>
+                    </dd>
+                    <dd class="flt-check" type="screen" val="1">
+                        <i class="ico-comm i-check"></i><!-- 点击添加i-checked-->
+                        <span>包邮</span>
+                    </dd>
+                    <dd class="flt-check" type="screen" val="3">
+                        <i class="ico-comm i-check"></i><!-- 点击添加i-checked-->
+                        <span>聚豆可抵</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+<!--
+        <div class="good-list">
+            <div id="blk_productlist_product"></div>
+
+            <!-- 分页按钮  -->
+<!--
+            <div class="page pagesmar pagewth" id="page_productlist_product"></div>
+        </div>
+        <script type="text/html" id="tmpl_productlist_product">
+            {if json.ret != 0 || !json.data || !json.data.list || json.data.list.length == 0}
+            <div class="defaultnull clearfix">
+                <div class="nullcon">
+                    <div class="pic"></div>
+                    <div class="txt">
+                        <p class="tt">未查到商品信息！</p>
+                        <p>您可以：</p>
+                        <p>1、进入首页更多折扣商品等着你，<a href="index.shtml" target="_blank" class="blue">立即前往&gt;</a></p>
+                    </div>
+                </div>
+            </div>
+            {else}
+            <ul class="clearfix">
+                {var i=0}
+                {for item in json.data.list}
+                <li>
+                    <a href="detail.shtml?id=${item.iMallId}" class="good-link" target="_blank">
+                        {if item.waterMarkName}
+                        <div class="ico-comm i-mark"><span class="mark-txt">${item.waterMarkName}</span></div>
+                        {/if}
+                        <img src="${item.sProfileImg}" width="280" height="268" alt="${item.sMallName}">
+                        <div class="good-info">
+                            <p class="good-name">${item.sMallName}</p>
+                            <div class="good-pri">
+                                <span class="new-pri">￥${item.iCurrPriceYuan}</span>
+                                <span class="old-pri">￥${item.iOriPriceYuan}</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {var i=i+1}
+                {/for}
+            </ul>
+            {/if}
+        </script>
+-->
+        <div class="good-list">
+            <div id="dj1" style="display: none">
+                <div class="pro-none">
+                    暂时没有商品呢，去首页看看吧
+                </div>
+            </div>
+            <ul class="clearfix" id="dj_goods_ul">
+
+            </ul>
+            <!-- 分页按钮  -->
+            <div class="page pagesmar pagewth" id="page_wrapper">
+                <!--  <span class="page-btn active"><a page="1" href="?page_num=1&amp;page_size=9">1</a></span>
+                  <span class="page-btn"><a page="2" href="?page_num=2&amp;page_size=9">2</a></span>
+                  <span class="page-btn"><a page="3" href="?page_num=3&amp;page_size=9">3</a></span>
+                  <span class="page-btn"><a page="4" href="?page_num=4&amp;page_size=9">4</a></span>
+                  <span class="page-btn"><a page="5" href="?page_num=5&amp;page_size=9">5</a></span>
+                  <span class="p_prev"><a href="?page_num=1&amp;page_size=9"><i class="ico-center ico-arrleft"></i></a></span>
+                  <span class="p_next"><a href="?page_num=2&amp;page_size=9"><i class="ico-center ico-arrright"></i></a></span>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/html" id="tpl_goods_ul">
+    {for g in tpl_goods_ul}
+    <li>
+        {if g.iCustomize==1}
+        <a href="/${g.sBizCode}/detail2.shtml?id=${g.iMallId}"  target="_blank" class="good-link">
+            {if g.sBizCode=='lol'}
+            <div class="ico-comm {if g.iTagId==66||g.iTotalMallQty-g.iTotalSoldNum<=0} i-out{else} {if g.iWaterMark!=0}i-mark{/if}{/if}">
+                {if g.iTagId==66}
+                <span class="mark-txt">已下架</span>
+                {else}
+                {if g.iTotalMallQty-g.iTotalSoldNum<=0}
+                <span class="mark-txt">缺货</span>
+                {else}
+                <span class="mark-txt">${g.WaterName}</span>
+                {/if}
+                {/if}
+
+            </div>
+            {if g.iTotalMallQty-g.iTotalSoldNum<=0||g.iTagId==66}
+            <div class="out-zzc"></div>
+            {/if}
+            {else}
+            <div class="ico-comm {if g.iWaterMark==11||g.iTotalMallQty-g.iTotalSoldNum<=0} i-out{else} {if g.iWaterMark!=0}i-mark{/if}{/if}">
+                {if g.iWaterMark==11}
+                <span class="mark-txt">已下架</span>
+                {else}
+                {if g.iTotalMallQty-g.iTotalSoldNum<=0}
+                <span class="mark-txt">缺货</span>
+                {else}
+                <span class="mark-txt">${g.WaterName}</span>
+                {/if}
+                {/if}
+            </div>
+            {if g.iTotalMallQty-g.iTotalSoldNum<=0||g.iWaterMark==11}
+            <div class="out-zzc"></div>
+            {/if}
+            {/if}
+
+            <img src="${g.sProfileImg}" width="280" height="268" alt="商品图">
+            <div class="good-info">
+                <p class="good-name">${g.sMallName}</p>
+                <div class="good-pri">
+                    <span class="new-pri">￥${parseFloat(g.iPriceReal / 100).toFixed(2)}</span>
+                    <span class="old-pri">￥${parseFloat(g.iOriPrice / 100).toFixed(2)}</span>
+                </div>
+            </div>
+        </a>
+        
+        {else}
+        <a href="/${g.sBizCode}/detail.shtml?id=${g.iMallId}"  target="_blank" class="good-link">
+            {if g.sBizCode=='lol'}
+            <div class="ico-comm {if g.iTagId==66||g.iTotalMallQty-g.iTotalSoldNum<=0} i-out{else} {if g.iWaterMark!=0}i-mark{/if}{/if}">
+                {if g.iTagId==66}
+                <span class="mark-txt">已下架</span>
+                {else}
+                {if g.iTotalMallQty-g.iTotalSoldNum<=0}
+                <span class="mark-txt">缺货</span>
+                {else}
+                <span class="mark-txt">${g.WaterName}</span>
+                {/if}
+                {/if}
+
+            </div>
+            {if g.iTotalMallQty-g.iTotalSoldNum<=0||g.iTagId==66}
+            <div class="out-zzc"></div>
+            {/if}
+            {else}
+            <div class="ico-comm {if g.iWaterMark==11||g.iTotalMallQty-g.iTotalSoldNum<=0} i-out{else} {if g.iWaterMark!=0}i-mark{/if}{/if}">
+                {if g.iWaterMark==11}
+                <span class="mark-txt">已下架</span>
+                {else}
+                {if g.iTotalMallQty-g.iTotalSoldNum<=0}
+                <span class="mark-txt">缺货</span>
+                {else}
+                <span class="mark-txt">${g.WaterName}</span>
+                {/if}
+                {/if}
+            </div>
+            {if g.iTotalMallQty-g.iTotalSoldNum<=0||g.iWaterMark==11}
+            <div class="out-zzc"></div>
+            {/if}
+            {/if}
+
+            <img src="${g.sProfileImg}" width="280" height="268" alt="商品图">
+            <div class="good-info">
+                <p class="good-name">${g.sMallName}</p>
+                <div class="good-pri">
+                    <span class="new-pri">￥${parseFloat(g.iPriceReal / 100).toFixed(2)}</span>
+                    <span class="old-pri">￥${parseFloat(g.iOriPrice / 100).toFixed(2)}</span>
+                </div>
+            </div>
+        </a>
+        {/if}
+    </li>
+    {/for}
+</script>
+
+
+<div id="blk_productlist_hotrank"></div>
+<script id="tmpl_productlist_hotrank"></script>
+
+<!-- 通用底部栏 -->
+<!-- footer S -->
+<div class="footer">
+    <div class="mid clearfix">
+                 <a href="//cf.qq.com/" target="_bank" class="footer-djc" title="道聚城"><img src="//js01.daoju.qq.com/zb/cf/images/logo-cf-down.png" width="250" alt="道聚城" style="margin-left:-30px" /></a>
+                <ul class="footer-info fl">
+            <li><a href="/help.shtml?gotab=1" target="_blank" muse_scanned="true"><span class="ic04 in comm-top"></span>购物指南</a></li>
+            <li><a href="/help.shtml?gotab=2" target="_blank" muse_scanned="true"><span class="ic07 in comm-top"></span>配送方式</a></li>
+            <li><a href="/help.shtml?gotab=3" target="_blank" muse_scanned="true"><span class="ic05 in comm-top"></span>常见操作</a></li>
+            <li><a href="/help.shtml?gotab=4" target="_blank" muse_scanned="true"><span class="ic06 in comm-top"></span>售后服务</a></li>
+            <li><a href="/help.shtml?gotab=5" target="_blank" muse_scanned="true"><span class="ic08 in comm-top"></span>关于我们</a></li>
+            <!--li><a href="javascript:;"><span class="ic09 in comm-top"></span>快递 100</a></li-->
+        </ul>
+        <ul class="footer-code fl">
+                         <li>
+                <img src="//js01.daoju.qq.com/zb/cf/images/logo-cf-qr.png" width="100" height="100" alt="掌上穿越火线" />
+                <p>掌上穿越火线</p>
+            </li>
+            <li>
+                <img src="//js01.daoju.qq.com/zb/mall/images/jcp_gzh.jpg" width="100" height="100" alt="聚诚品公众号" />
+                <p>聚诚品公众号</p>
+            </li>
+                    </ul>
+    </div>
+</div>
+<!-- footer E -->
+<div class="fixednav" id="blk_footer_tool">
+    <a class="fixedlink myorder" title="我的订单" href="/myorder.shtml?busid=cf" target="_blank">
+        <i class="comicon navico-order"></i>
+        <span>我的<br>订单</span>
+    </a>
+    <a class="fixedlink myaddress" title="我的地址" href="/address.shtml" target="_blank">
+        <i class="comicon navico-address"></i>
+        <span>我的<br>地址</span>
+    </a>
+    <a class="fixedlink mycart" title="我的购物车" href="//mall.qq.com/cf/cart.shtml" target="_blank">
+        <i class="comicon navico-cart"></i>
+        <span>购<br>物<br>车</span>
+        <i class="comicon navico-cartnum">0</i>
+    </a>
+    
+        <a id="onlineService1" class="fixedlink myservice" target="_blank"
+       title="咨询">
+        <i class="comicon navico-service"></i>
+        <span>咨询</span>
+    </a>
+        
+</div>
+<div class="topnav" style="display: block;">
+    <a href="#top"><i class="comicon btn-top"></i></a>
+</div>
+
+<!-- 底部帮助栏 -->
+<script type="text/javascript" src="//ossweb-img.qq.com/images/js/milo/daoju/hx/report.js" charset="utf-8"></script>
+<script src="//ossweb-img.qq.com/images/js/foot.js"></script>
+
+
+<script>
+    //    异常上报
+    (function () {
+        /*BJ_REPORT.init({
+            id: 1178, // 申请的项目上报ID，不指定id将不上报
+            combo: 1, // combo 是否合并上报， 0 关闭， 1 启动（默认）
+            delay: 100, // 当 combo= 1 可用，延迟多少毫秒，合并缓冲区中的上报
+            url: "//badjs2.qq.com/badjs", // 指定上报地址
+            ignore: [/Script Error/i], // 忽略某个错误
+            level: 4 // 设置默认的级别 // 上报等级 // 1-debug 2-info 4-error 8-fail
+        });*/
+        
+        
+    })();
+    ////ossweb-img.qq.com/images/js/foot.js被道聚城、官网、心悦共用，为不影响官网和心悦，所以在此添加新的内容
+    ~function () {
+        var getElementsByClass = function (className, parentElement) {
+            var elements = [];
+            var match = navigator.userAgent.match(/msie (\d)/i);
+            if (match && match[1] < 9) {//ie版本小于9时
+                var tmpElem = parentElement.getElementsByTagName('*');
+                for (var i = 0; i < tmpElem.length; i++) {
+                    tmpElem[i].clasName.indexOf(className) != -1 && elements.push(tmpElem[i]);
+                }
+            } else {
+                elements = parentElement.getElementsByClassName(className);
+            }
+
+            return elements;
+        };
+
+        var footer_ied = document.getElementById('footer_ied');
+        //var wrap_ied = footer_ied ? getElementsByClass('wrap_ied', footer_ied)[0] : null;
+        //var p = wrap_ied ? wrap_ied.childNodes[1] : null;
+        var wrap_ied = footer_ied.childNodes[0];
+        var p = footer_ied.getElementsByTagName('p')[1];
+        if (p) {
+            var dom = document.createElement('p');
+            dom.innerHTML = [
+                //'<a href="//www.qq.com/xwdz.shtml" target="_blank" rel="nofollow">粤府新函[2001]87号</a>',
+                '<a href="//www.qq.com/culture.shtml" target="_blank" rel="nofollow">粤网文[2014]0633-233号</a>',
+                //'<a href="//www.qq.com/cbst.shtml" target="_blank" rel="nofollow">网络视听许可证1904073号</a>',
+                '增值电信业务经营许可证：<a href="//www.qq.com/icp.shtml" target="_blank" rel="nofollow">粤B2-20090059</a>',
+                '<a href="//www.qq.com/icp1.shtml" target="_blank" rel="nofollow">B2-20090028</a>',
+                '违法和不良信息举报电话：0755-83767606'
+            ].join('&nbsp;');
+            wrap_ied.insertBefore(dom, p);
+        }
+    }();    
+</script>
+<script src="//game.gtimg.cn/images/js/milo/milo.js"></script>
+<script src="//game.gtimg.cn/images/js/daoju/time/cooperation/zb/gamelist.js"></script>
+<!--<script src="//ossweb-img.qq.com/images/js/jquery/jquery-1.7.2.min.js"></script>-->
+<script type="text/javascript">
+    milo.ready(function () {
+        milo.config.version = '20171105';
+        
+                
+        need(['daoju.zb.comm'], function (comm) {
+            comm.login();
+            comm.navbar();
+            comm.category();
+            comm.search();
+            comm.cart();
+            comm.footTool();
+            comm.tcssPing();
+        });
+    });
+</script>
+
+<!--[if IE 6]>
+<script src="//gamevip.qq.com/act/public/DD_belatedPNG_0.0.8a-min.js" mce_src="DD_belatedPNG.js"></script>
+<script type="text/javascript">
+    DD_belatedPNG.fix('.guide');
+    document.execCommand("BackgroundImageCache", false, true);
+</script>
+<![endif]-->
+
+
+<script>
+
+    milo.ready(function () {
+        need(['daoju.zb.productlist', 'daoju.zb.comm'], function (productlist, comm) {
+            var biz = comm.getPageBiz();
+            var catid = comm.request('catid');
+            var tagid = comm.request('tagid');
+            var mallid = comm.request('mallid');
+            var markid = comm.request('markid');
+            var keyword = decodeURI(comm.request('keyword'));
+            keyword = keyword.replace(/^\s*/, '').replace(/\s*$/, '');
+            $('#inpt_header_search').val(decodeURI(comm.request('keyword')));
+            if (keyword) {
+                productlist.search({
+                    biz: biz,
+                    keyword: keyword
+                });
+            } else {
+                if (catid) {
+                    productlist.product({
+                        biz: biz,
+                        cat_tag_id: catid,
+                        cat_tag_type: 'cat'
+                    });
+                } else if (tagid) {
+                    productlist.product({
+                        biz: biz,
+                        cat_tag_id: tagid,
+                        cat_tag_type: 'tag'
+                    });
+                } else if (markid) {
+                    productlist.product({
+                        biz: biz,
+                        cat_tag_id: markid,
+                        cat_tag_type: 'wmark'
+                    });
+                } else if (mallid) {
+                    productlist.product({
+                        biz: biz,
+                        opt_type: 'goods_list_by_ids',
+                        mall_ids: mallid
+                    });
+                } else {
+                    productlist.product({
+                        biz: biz,
+                        cat_tag_id: '1',
+                        cat_tag_type: 'all'
+                    });
+                }
+            }
+
+            // productlist.hotrank({
+            //     biz: biz,
+            //     keyword: keyword
+            // });
+
+
+            /**
+             EAS.need('mall', function() {
+        EAS.mall()
+    });
+             */
+
+            comm.easPing({
+                'catid': catid            /*道具分类*/
+            });
+
+
+        });
+
+    });
+</script>
+<script type="text/javascript">
+    milo.ready(function () {
+        need(['daoju.zb.comm'], function (comm) {
+            comm.getCustomerServiceNew();
+        });
+    });
+</script>
+
+</body>
+</html>

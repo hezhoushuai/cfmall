@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/imgs/head/20190401112730.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/productlist.css">
+    <title>商品列表-穿越火线周边商城</title>
+</head>
+
+<body>
+    <div id="loding"></div>
+        <div id="headerpage"></div>
+        <div id="page-contenier">
+            <div class="mid_topBar">
+                <p class="class_name_p"><span>首页></span><span id="class_name_span"></span></p>
+                <div class="class_bar">
+                    <div id="showclass">
+                        <ul class="topbar">
+                            <li class="class_li">分类:</li>
+                            <li>全部</li>
+                            <li>数码外设</li>
+                            <li>家居日用</li>
+                            <li>模型手办</li>
+                            <li>包类专区</li>
+                        </ul>
+                    </div>
+                    <div class="fltbox ">
+                        <ul class="first_ul">
+                            <li class="class_li">排序:</li>
+                            <li class="cur">默认</li>
+                            <li>价格<i class="ico-comm i-arrgray"></i></li>
+                            <li>新品<i class="ico-comm i-arrgray"></i></li>
+                            <li>人气<i class="ico-comm i-arrgray"></i></li>
+                            <li>销量<i class="ico-comm i-arrgray"></i></li>
+                        </ul>
+                        <ul class="last_ul">
+                            <li class="class_li">筛选:</li>
+                            <li><i class="ico-comm i-check"></i>有货</li>
+                            <li><i class="ico-comm i-check"></i>包邮</li>
+                            <li><i class="ico-comm i-check"></i>聚豆可抵</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="page-contenier_box">
+                <div class="productlist_detail">
+                    <div id="goods_container">
+                        <script type="text/html" id="p-list">
+                            <ul id="dj_goods_ul">
+                                {{each list item}}
+                                <li>
+                                    <a href="/html/detail.html?id={{item.id}}">
+                                        <div class="ico-comm i-mark" id="isNew" {{if item.isNew}}
+                                            {{else}}style="display:none" {{/if}}>
+                                            <span>新品</span>
+                                        </div>
+                                        <img src={{item.goods_img}} alt="">
+                                        <p class="good-name">{{item.good_name}}</p>
+                                        <p class="good-price"><span
+                                                class="pri">￥{{(item.goods_price-0).toFixed(2)}}</span><span
+                                                class="old-pri">￥{{item.old_price.toFixed(2)}}</span></p>
+                                    </a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </script>
+                    </div>
+                    <ul id="page_Nums"></ul>
+    
+                </div>
+    
+            </div>
+        </div>
+        <div id="footerpage"></div>
+        <script src="/libs/require/require.js" data-main="/js/productlist.js"></script>
+</body>
+
+</html>

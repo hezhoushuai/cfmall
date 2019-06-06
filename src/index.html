@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="/imgs/head/20190401112730.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/libs/swiper/css/swiper.min.css">
+    <title>首页-火线周边商城</title>
+</head>
+
+<body>
+    <!-- 头部部分 -->
+    <div id="headerpage"></div>
+    <!-- 主体部分 -->
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper carousel">
+            <div class="swiper-slide"><img src="/imgs/head/20190319115657_220765.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="/imgs/head/20190314112440_166906.jpg" alt=""></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-bottom"></div>
+    </div>
+    </div>
+    <div class="container">
+        <!-- 手枪模板 -->
+
+        <script type="text/html" id="container_data">
+            {{each list item}}
+            <div class="container_box">
+                <div class="container_box_top">
+                    <h1>{{item.class_name}}</h1>
+                    <span>{{item.class_describe}}</span>
+                    <a href="javascript:;">
+                        <span>更多</span>
+                        <i class="ico-mm i-more"></i>
+                    </a>
+                </div>
+                <div class="container_box_detail">
+                    <h2><a href="/html/detail.html?id={{item.class_id}}"><img src='{{item.class_img}}' alt="cf"></a>
+                    </h2>
+                    <ul>
+                        {{include 'art1' item.goods}}
+                    </ul>
+                </div>
+            </div>
+            </div>
+            {{/each}}
+        </script>
+    </div>>
+    <!-- 新颖数码 -->
+    <!-- 尾部部分 -->
+    <!-- 个性生活 -->
+    <div id="footerpage"></div>
+    <script type="text/html" id="art1">
+        {{each good item}}
+        <li><a href="/html/detail.html?id={{item.id}}"><img src='{{item.good_img}}' alt="cf">
+                <div class="good_info">
+                    <p class="goodname">{{item.good_name}}</p>
+                    <p class="goodprice">￥{{item.good_price}}</p>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <script type="text/javascript" data-main="/js/index.js" src="/libs/require/require.js"></script>
+</body>
+
+</html>

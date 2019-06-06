@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/imgs/head/20190401112730.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/detail.css">
+    <title>详情页-穿越火线周边商城</title>
+</head>
+
+<body>
+    <div id="headerpage"></div>
+    <!-- 主体内容 -->
+    <div id="detail_body">
+        <p class="class_name_p"><span>商城首页></span><span id="class_name_span"></span><span id="goods_name"></span></p>
+        <div class="detail_container">
+
+            <div class="top_detail">
+                <script type="text/html" id="top_detail_container">
+                    {{each data value index}}
+                    <div class="top_detail_pic">
+                        <div class="m">
+                            <div class="jqueryzoom">
+                                <img id="img" class="cloudzoom" src="{{value.good_detailPic[0].imgs}}"
+                                    data-cloudzoom="zoomSizeMode:'image',zoomImage: '{{value.good_detailPic[0].imgs}}',autoInside: 30"
+                                    alt="" title="" />
+                            </div>
+
+                            <ul class="letter_pic">
+
+                                <li>
+                                    <img class="cloudzoom-gallery" src="{{value.good_detailPic[0].imgs}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom',image:'{{value.good_detailPic[0].imgs}}',zoomImage:'{{value.good_detailPic[0].imgs}}'" />
+                                </li>
+                                <li>
+                                    <img class="cloudzoom-gallery" src="{{value.good_detailPic[1].imgs}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom',image:'{{value.good_detailPic[1].imgs}}',zoomImage:'{{value.good_detailPic[1].imgs}}'" />
+                                </li>
+                                <li>
+                                    <img class="cloudzoom-gallery" src="{{value.good_detailPic[2].imgs}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom',image:'{{value.good_detailPic[2].imgs}}',zoomImage:'{{value.good_detailPic[2].imgs}}'" />
+                                </li>
+                                <li>
+                                    <img class="cloudzoom-gallery" src="{{value.good_detailPic[3].imgs}}"
+                                        data-cloudzoom="useZoom:'.cloudzoom',image:'{{value.good_detailPic[3].imgs}}',zoomImage:'{{value.good_detailPic[3].imgs}}'" />
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="top_detail_right">
+                        <h1>{{value.good_name}}</h1>
+                        <p class="good_name">{{value.good_name}}</p>
+                        <h3 class="good_price">
+                            ￥
+                            <em>{{(value.goods_price - 0).toFixed(2)}}</em>
+                            <span>￥{{(value.old_price - 0).toFixed(2)}}</span>
+                        </h3>
+                        <p class="fa_price">
+                            <i class="ico-detail ico-discount"></i>
+                            <span>￥{{(value.old_price - value.goods_price).toFixed(2)}}</span>
+                        </p>
+                        <p class="commitNums">已售:
+                            <span>{{value.saleNum}}</span>累计评价:
+                            <span>{{value.commitNums}}</span>
+                            <em>5.0</em>
+                            <i class="ico-detail i-star10"></i>
+                        </p>
+                        <div class="optionBox">
+                            <p class="buyNums"><span>数量</span>
+                                <a href="javascript:;" id="reduce">
+                                    <i class="ico-detail"></i>
+                                </a>
+                                <input type="text" id="buyNums" value="1">
+                                <a href="javascript:;" id="add">
+                                    <i class="ico-detail i-plus"></i>
+                                </a>
+                                <span id="repertory">(还剩{{value.stock}}件)</span>
+                            </p>
+                        </div>
+                        <p class="addCarContainer">
+                            <span class="addCar">加入购物车</span>
+                            <span class="buyNow">立即购买</span>
+                            <a href="javascript:;">
+                                <i class="ico-detail ico-collect"></i>收藏
+                            </a>
+                        </p>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
+
+            <div class="mid_containner">
+                <script type="text/html" id="mid_detail_container">
+                    {{each data value index}}
+                    <ul class="mid_head">
+                        <li>商品详情<i class="i-tabline"></i></li>
+                        <li>用户点评<span>{{value.commitNums}}</span><i class="i-tabline" style="display:none;"></i>
+                        </li>
+                        <li>联系商家<i class="i-tabline" style="display:none;"></i></li>
+                    </ul>
+                    <div class="parameter">
+                        <ul>
+                            <li>商品名称:{{value.good_name}}</li>
+                            <li>店铺:{{value.shopName}}</li>
+                            <li>上架时间:{{value.good_time}}</li>
+                            <li>商品毛重:{{value.good_weight}}</li>
+                            <li>商城:穿越火线</li>
+                            <li>周边分类:{{value.class_name}}</li>
+                        </ul>
+                        <div class="detailbox">
+                            {{include 'art1' value.good_description}}
+
+                        </div>
+                    </div>
+                    <!-- 用户点评页面 -->
+                    <div class="pordcont pord-comment">
+                        <div class="all-comment">
+                            玩家综合评分：<i class="ico-detail i-star10"></i>
+                        </div>
+                        <!-- 用户详细评价 -->
+                        <ul class="cent-ul">
+                            {{include 'art2' value.evaluate}}
+
+                        </ul>
+                    </div>
+                    <div class="callMe">
+                        <p><i class="contact-company"></i>商家:<span id="shopName">{{value.shopName}}</span></p>
+                        <p><i class="shopPhone"></i>商家联系方式</p>
+                        <ul>
+                            <li>电话：{{value.shopPhone}}</li>
+                            <li>QQ:993578319</li>
+                            <li>微信:暂无</li>
+                        </ul>
+                        <div class="contact-service">
+                            <p><i class="showTime"></i><span>商家服务时间</span></p>
+                            <p>在线时间：9:00-24:00</p>
+                        </div>
+                    </div>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
+            <script id="art1" type="text/html">
+                {{each img_description item}}
+                <p><img src="{{item.img}}" alt=""></p>
+                {{/each}}
+            </script>
+            <script id="art2" type="text/html">
+                {{each every_evaluate item}}
+                <li>
+                    <div class="headimg"><img src="{{item.headimg}}" alt="{{item.qqnick}}"><span>{{item.qqnick}}</span>
+                    </div>
+                    <div class="comment-text">
+                        <p class="top"><span>商品评分</span><i class="ico-detail i-star10"></i><em>5.0分</em><span
+                                class="buy_time">{{item.buyTime}}</span></p>
+                        <p class="text-detail">{{item.text_detail}}</p>
+                        <p id="text-detail">评论详情</p>
+                    </div>
+                </li>
+                {{/each}}
+                </div>
+            </script>
+            <!-- 主体内容 -->
+            <div id="footerpage"></div>
+            <!-- 购物车页面 -->
+            <div id="addCart">
+                <div class="cartContainer"></div>
+                <div class="popup_detail_cart">
+                    <a href="javascript:;" class="closeBox">
+                        <i class="i-close"></i>
+                    </a>
+                    <h4>购物车提醒</h4>
+                    <div class="popup-con">
+                        <p><i></i><span>商品已成功添加到购物车</span></p>
+                        <div>
+                            <span id="okBtn">确认</span>
+                            <span id="again">继续购物</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <script src="/libs/require/require.js" data-main="/js/detail.js">
+            </script>
+
+</body>
+
+</html>

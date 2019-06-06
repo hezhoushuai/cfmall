@@ -1,0 +1,370 @@
+
+
+.top-bar {
+    position: relative;
+    color: #3a3f4a;
+    background-color: #0e0e0f;
+    font-size: 14px;
+}
+
+.top-wrap {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.top-action {
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+}
+
+.top-notice .top-notice-continer {
+    display: inline-block;
+    overflow: hidden;
+    height: 30px;
+    width: 400px;
+    position: relative;
+}
+
+.top-info {
+    height: 99px;
+    font-size: 16px;
+    color: #f6f7ef;
+    background: #0e0e0f;
+    border-bottom: 1px solid #222;
+    line-height: 30px;
+}
+
+.icon-tongzhi {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 6px 15px 0 5px;
+    background: url(/imgs/head/ico-comm.png) no-repeat;
+    background-position: 0 -95px;
+
+}
+
+.top-action .top-notice {
+    height: 30px;
+}
+
+.top-action .top-notice ul li {
+    height: 30px;
+    line-height: 30px;
+    color: rgb(167, 167, 167);
+    list-style: none;
+
+}
+
+
+
+.top-info .logo-cf-up {
+    display: inline-block;
+    text-indent: -999em;
+    width: 270px;
+    height: 90px;
+    margin-left: 40px;
+    background: url(/imgs/head/logo-cf-up.png) no-repeat center center;
+    background-size: 325px 100px;
+}
+
+.top-info .logo-cf-up-comm2 {
+    display: inline-block;
+    margin-left: 10px;
+    width: 148px;
+    height: 71px;
+    vertical-align: bottom;
+    text-indent: -9999em;
+    background: url(/imgs/head/ico-comm5.png) no-repeat center center;
+
+}
+
+.right {
+    float: right;
+}
+
+.top-info .sosobox {
+    margin: 39px 20px 0 0;
+    width: 240px;
+    height: 40px;
+    background: #242424;
+    border-radius: 20px;
+    position: relative;
+    float: left;
+}
+
+.top-info .sosobox .i-search {
+    position: absolute;
+    top: 12px;
+    left: 11px;
+    width: 16px;
+    height: 17px;
+    background: url(/imgs/head/ico-comm.png) no-repeat;
+    background-position: -80px -3px;
+    text-indent: -9999em;
+}
+
+.top-info .sosobox .top-soso {
+    margin-left: 33px;
+    width: 205px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+.top-searchList {
+    position: absolute;
+    background: linear-gradient(#242424, #A6A6A6);
+    border-radius: 20px;
+    z-index:9999;
+    width: 240px;
+}
+
+.top-searchList li {
+    margin-top: 5px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.loginbar {
+    float: left;
+    position: relative;
+    margin-top: 39px;
+    margin-right: 40px;
+    margin: 39px 40px 0 10px;
+    max-width: 250px;
+    height: 60px;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.loginbar a {
+    color: #f6f7ef
+}
+
+.loginbox {
+    width: 132px;
+
+    text-align: center;
+}
+
+
+.loginbox .login-info {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.loginbox .login-info img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 5px;
+    border:3px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.loginbox  .top-hover {
+    display: none;
+    position: relative;
+    left: -25px;
+    top: 10px;
+    ul{
+        position: relative;
+        z-index: 9999;
+    }
+}
+.loginbox:hover .top-hover {
+    display: block;
+}
+
+.loginbox ul li {
+    width: 100%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    text-align: center;
+    color: #333333;
+    cursor: pointer;
+}
+
+.loginbox ul {
+    border-radius: 8px;
+    background: #fff;
+}
+
+.arrow {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -9px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 10px solid #fff;
+}
+
+.right .carbox {
+    display: inline-block;
+    margin-top: 47px;
+    width: auto;
+    line-height: 24px;
+    font-size: 14px;
+    color: #f6f7ef;
+}
+
+.right .i-cart {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(/imgs/head/ico-comm.png) no-repeat;
+    background-position: -2px -63px;
+    vertical-align: middle;
+}
+
+.ico-comm {
+    background: url(/imgs/head/ico-comm.png) no-repeat;
+    width: 15px;
+    height: 17px;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+.i-person {
+    margin-top: -2px;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background-position: 0 -279px;
+}
+
+.i-order {
+    background-position: -162px -2px;
+}
+
+.i-lqcen {
+    background-position: -119px -64px;
+}
+
+.i-addr {
+    background-position: -132px -3px;
+}
+
+.i-quan {
+    background-position: -114px -2px;
+}
+
+.i-collect {
+    background-position: -132px -3px;
+}
+
+.i-subs {
+    background-position: -95px -64px;
+}
+
+.i-quit {
+    background-position: -28px -64px;
+}
+
+.top-menu {
+    height: 56px;
+    line-height: 56px;
+    cursor: pointer;
+}
+
+.top-menu ul {
+    width: 645px;
+    display: inline-block;
+}
+
+.top-menu ul li {
+    height: 56px;
+    line-height: 56px;
+    width: 129px;
+    color: #A6A6A6;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    background: url(/imgs/head/ico-comm.png) no-repeat;
+    background-position: 130px 56px;
+}
+
+.top-menu ul .cur {
+    background-position: -28px -92px;
+    color: #fff;
+}
+
+.top-menu .all-class {
+    float: right;
+    font-size: 16px;
+    text-align: left;
+    width: 118px;
+    color: #fff;
+    height: 56px;
+    line-height: 56px;
+}
+
+.i-arrbot {
+    background-position: -100px -2px;
+}
+
+.i-arrtop {
+    background-position: -66px -2px;
+}
+
+.top-submenu {
+    width: 100%;
+    height: 474px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    z-index: 9999;
+    background-color: #f6f7ef;
+}
+
+.top-submenu ol {
+    width: 100px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.top-submenu ol a {
+    color: #333;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.top-submenu ol a:hover {
+    text-decoration: underline;
+}
+
+.top-submenu ol dt {
+    width: 100%;
+    height: 100px;
+}
+
+.top-submenu ol dt a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 4px solid #e3e3e3;
+
+}
+
+.top-submenu ol dt a span {
+    font-size: 16px;
+    height: 36px;
+}

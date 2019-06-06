@@ -1,0 +1,168 @@
+<div class="top-bar">
+    <!-- top-bar占位 -->
+    <div class="top-blank" style="height: 186px;"></div>
+    <div class="top-wrap">
+        <div class="top-action">
+            <!-- 公告栏 -->
+            <div class="icon-tongzhi"></div>
+            <div class="top-notice">
+                <div class="top-notice-continer">
+                    <ul>
+                        <li>2019春节发货通知，点击查看详情></li>
+                        <li>CF周边商城上线公告，点击查看详情></li>
+                        <li>退款问题，点击查看详情></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- top-info -->
+        <div class="top-info">
+            <div class="logo">
+                <a href="/" class="logo-cf-up" title="穿越火线官网" target="_blank">穿越火线官网</a>
+                <a href="https://mall.qq.com/" class="logo-cf-up-comm2" target="_blank">道具城</a>
+                <!-- 右侧 -->
+                <div class="right">
+                    <!-- 搜索框 -->
+                    <div class="sosobox" id="blk_header_search">
+                        <label for="input_header_search">
+                            <a href="javascript:;" class="i-search" title="搜索" id="btn_header_search">搜索</a>
+                            <input type="text" class="top-soso" placeholder="请输入想要找的宝贝" id="input_header_search">
+                        </label>
+                        <ul class="top-searchList">
+                            <script type="text/html" id="top_searchList">
+                                {{each list item}}
+                                <li>{{item[0]}}</li>
+                                {{/each}}
+                            </script>
+                        </ul>
+
+                    </div>
+                    <!-- 登录框 -->
+                    <div class="loginbar">
+                        <!-- 登录前 -->
+                        <div class="unlogin" id="unlogin">
+                            <a href="javascript:;" id="ntm_header_login" class="hre" title="立即登录">
+                                <i class="ico-comm i-person"></i>
+                                <span>立即登录</span>
+                            </a>
+                        </div>
+                        <!-- 登录后 -->
+                        <div class="loginbox" id="loginbox">
+                            <div class="login-info">
+                                <img src="" width="38" height="38" alt="头像">
+                                <span id="top_head_username"></span>
+                            </div>
+                            <div class="top-hover">
+                                <div class="arrow"></div>
+                                <ul>
+                                    <li>
+                                        <i class="fl ico-comm i-order"></i>
+                                        <span>订单管理</span>
+                                    </li>
+                                    <li> <i class="fl ico-comm i-addr"></i>
+                                        <span>地址管理</span>
+                                    </li>
+                                    <li> <i class="fl ico-comm i-quan"></i>
+                                        <span>优惠卡券</span>
+                                    </li>
+                                    <li>
+                                        <i class="fl ico-comm i-collect"></i>
+                                        <span>我的收藏</span>
+                                    </li>
+                                    <li>
+                                        <i class="fl ico-comm i-subs"></i>
+                                        <span>订阅管理</span>
+                                    </li>
+                                    <li>
+                                        <i class="fl ico-comm i-lqcen"></i>
+                                        <span>领取中心</span>
+                                    </li>
+                                    <li id="exit_login">
+                                        <i class="fl ico-comm i-quit"></i>
+                                        <span>退出登录</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/html/cart.html" class="carbox">
+                        <i class="icon-comm i-cart"></i>
+                        <span>购物车</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="top-menu">
+            <ul id="topMenu">
+                <li><span>首页</span></li>
+                <li><span>数码外设</span></li>
+                <li><span>家居日用</span></li>
+                <li><span>模型手办</span></li>
+                <li><span>包类专区</span></li>
+            </ul>
+            <a target="blank" href="/html/productlist.html" title="全部商品分类" class="all-class">
+                <span>全部分类</span>
+                <i class="ico-comm i-arrbot"></i>
+            </a>
+        </div>
+        <div class="top-submenu" id="top-submenu">
+            <ol class="submenu-ol">
+                <dt class="submenu-li">
+                    <a class="class-name" href="/html/productlist.html?class=家居日用">
+                        <img src="/imgs/head/20181009144950_33369.png" alt="图标" width="30">
+                        <span>家居日用</span>
+                    </a>
+                </dt>
+                <dd><a href="javascript:;" target="_blank">背包</a></dd>
+                <dd><a href="javascript:;" target="_blank">雨伞</a></dd>
+                <dd><a href="javascript:;" target="_blank">水杯</a></dd>
+                <dd><a href="javascript:;" target="_blank">卫衣</a></dd>
+                <dd><a href="javascript:;" target="_blank">T恤</a></dd>
+                <dd><a href="javascript:;" target="_blank">饰品</a></dd>
+                <dd><a href="javascript:;" target="_blank">福袋</a></dd>
+                <dd><a href="javascript:;" target="_blank">围巾</a></dd>
+            </ol>
+            <ol class="submenu-ol">
+                <dt class="submenu-li">
+                    <a class="class-name" href="/html/productlist.html?class=数码外设">
+                        <img src="/imgs/head/20181009144942_72688.png" alt="图标" width="30">
+                        <span>数码外设</span>
+                    </a>
+                </dt>
+                <dd><a href="javascript:;" target="_blank">移动电源</a></dd>
+                <dd><a href="javascript:;" target="_blank">U盘</a></dd>
+                <dd><a href="javascript:;" target="_blank">鼠标垫</a></dd>
+                <dd><a href="javascript:;" target="_blank">数据线</a></dd>
+                <dd><a href="javascript:;" target="_blank">游戏支架</a></dd>
+                <dd><a href="javascript:;" target="_blank">游戏支架</a></dd>
+                <dd><a href="javascript:;" target="_blank">无线充电器</a></dd>
+                <dd><a href="javascript:;" target="_blank">个性手机壳</a></dd>
+                <dd><a href="javascript:;" target="_blank">键帽</a></dd>
+                <dd><a href="javascript:;" target="_blank">机壳</a></dd>
+
+            </ol>
+            <ol class="submenu-ol">
+                <dt class="submenu-li">
+                    <a class="class-name" href="/html/productlist.html?class=包类专区">
+                        <img src="/imgs/head/20181009144933_93325.png" alt="图标" width="30">
+                        <span>个性定制</span>
+                    </a>
+                </dt>
+                <dd><a href="javascript:;" target="_blank">定制服装</a></dd>
+            </ol>
+            <!-- 模型手办 -->
+            <ol class="submenu-ol">
+                <dt class="submenu-li">
+                    <a class="class-name" href="/html/productlist.html?class=模型手办">
+                        <img src="/imgs/head/20180920115156_96185.png" alt="图标" width="30">
+                        <span>模型手办</span>
+                    </a>
+                </dt>
+                <dd><a href="javascript:;" target="_blank">公仔手办</a></dd>
+                <dd><a href="javascript:;" target="_blank">枪模</a></dd>
+            </ol>
+        </div>
+    </div>
+</div>
+<!-- 登录框 -->
+<div id="web_loginbox" style="display:none"></div>

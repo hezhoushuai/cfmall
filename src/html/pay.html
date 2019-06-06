@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/imgs/head/20190401112730.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/pay.css">
+    <title>填写订单页-穿越火线周边</title>
+</head>
+
+<body>
+    <div id="headerpage"></div>
+    <!-- 中间部分 -->
+    <div class="cartContainer">
+        <div class="order-bg">
+            <div class=" order-cont mid">
+                <strong>选择收货地址</strong>
+                <div id="blk_pay_address">
+                    <ul id="address-list">
+                        <script type="text/html" id="addrList">
+                            <li>
+                                <p class="name">{{receiver}}</p>
+                                <p class="address">{{address}}</p>
+                                <p class="number">{{number}}</p>
+                            </li>
+                        </script>
+                        <li class="tj">
+                            <a href="javascript:;" id="btn_pay_address_add">
+                                <em></em>
+                                <span>新增收货地址</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-goods">
+                    <strong>确认商品信息</strong>
+                    <div class="order-details">
+                        <table>
+                            <colgroup>
+                                <col width="150">
+                                <col width="380">
+                                <col width="100">
+                                <col width="200">
+                                <col width="200">
+                                <col width="200">
+                            </colgroup>
+                            <thead>
+                                <t>
+                                    <th colspan="3">商品信息</th>
+                                    <th>单价(元)</th>
+                                    <th>数量</th>
+                                    <th>金额(元)</th>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                <script type="text/html" id="goodsList">
+                                    {{each data item}}
+                                    <tr>
+                                        <td>
+                                            <a href="/html/detail.html?id" +{{item.id}}>
+                                                <img src="{{item.img}}" alt="">
+                                            </a>
+                                        </td>
+                                        <td class="td-1">
+                                            <span>
+                                                {{item.goodname}}
+                                            </span>
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <span>{{item.price}} 元</span>
+                                        </td>
+                                        <td id="nums">
+                                            {{item.buyNums}}
+                                        </td>
+                                        <td id="money">{{item.price * item.buyNums}} 元</td>
+                                    </tr>
+                                    {{/each}}
+                                </script>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>订单备注:</td>
+                                    <td><input type="text" id="remark"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <!-- 全部的购物信息 -->
+                        <div id="blk_pay_total">
+                            <script type="text/html" id="tmpl_pay_total">
+                                <ul class="clearfix">
+                                    <li>{{nums}}件商品，商品总价</li>
+                                    <li class="t1">{{money}} 元</li>
+                                    <li>VIP抵扣</li>
+                                    <li class="t1">- 0 元</li>
+                                    <li>优惠券</li>
+                                    <li class="t1">- 0 元</li>
+                                    <li>聚豆抵扣</li>
+                                    <li class="t1">- 0 元</li>
+                                    <li>运费：</li>
+                                    <li class="t1">0 元</li>
+                                    <li>实付款（含运费）</li>
+                                    <li class="t1"><b>{{money}} 元</b></li>
+                                    <li class="t3">寄送至：{{address}} </li>
+                                    <li class="t2">收货人：{{name}}
+                                        {{number}}</li>
+                                </ul>
+                                </div>
+                                <div class="purchase-btn">
+                                    <a href="javascript:;" title="提交订单" id="btn_pay_submit" class="dd-btn">提交订单</a>
+                                    <a href="/html/cart.html" title="返回购物车修改" class="xg-btn">返回购物车修改</a>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="footerpage"></div>
+
+    <!-- 新增收货地址弹层 -->
+    <div id="pay_address_box">
+        <script type="text/html" id="tmpl_popup_pay_address">
+            <div class="popup" id="popup_pay_address" style="width:580px;">
+                <a class="popup-close" href="javascript:showDialog.hide()" title="关闭"><i
+                        class="comicon i-close"></i></a>
+                <div class="popup-main" id="blk_popup_pay_address"></div>
+
+                <h4 flag={{if flag}}"1"{{else}}"0"{{/if}}>{{if flag}}编辑收货地址{{else}}新增收货地址{{/if}}( <span
+                        style="color:red;">*</span> 为必填项)</h4>
+                <div class="popup-error" style="margin: 10px auto 0;text-align: center;color:red;"></div>
+                <div class="popup-con" style="margin-top:10px;">
+                    <div class="popup-form">
+                        <form id="fm_pay_address">
+                            <input type="hidden" value="${obj.id}" name="id">
+                            <input type="hidden" value="{if obj['default']}1{/if}" name="default">
+                            <input type="hidden" value="${obj.region}" name="region" verifyReg="^.{1,100}$"
+                                verifyErrMsg="所在地区为必填项">
+                            <div class="form-group clearfix">
+                                <label class="fl"><span style="color:red;">*</span>收件人</label>
+                                <input class="fl wth400" id="receiver" value="{{name}}" placeholder="收件人" name="name"
+                                    verifyReg="^.{1,20}$" verifyErrMsg="收件人为必填项, 且最多20个字符">
+                            </div>
+                            <div class="form-group clearfix zd10">
+                                <label class="fl"><span style="color:red;">*</span>所在地区</label>
+                                <div id="distpicker">
+                                    <div id="super_citys">
+                                        <div class="provinces">
+                                            <input class="input1" type="hidden" value="0" name="">
+                                            <input class="input2" type="hidden" value="0" name="">
+                                            <div>请选择省份</div>
+                                            <ul class="shadow_ul">
+                                                <li><input type="hidden" value="0"><span>请选择省份</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="city">
+                                            <input class="input1" type="hidden" value="0" name="">
+                                            <input class="input2" type="hidden" value="0" name="">
+                                            <div>请选择城市</div>
+                                            <ul>
+                                                <li><input type="hidden" value="0"><span>请选择城市</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="area">
+                                            <input class="input1" type="hidden" value="0" name="">
+                                            <input class="input2" type="hidden" value="0" name="">
+                                            <div>请选择地区</div>
+                                            <ul>
+                                                <li><input type="hidden" value="0"><span>请选择地区</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label class="fl"><span style="color:red;">*</span>收件人地址</label>
+                                <input class="fl wth400" id="address" value="{{address}}" placeholder="收件人地址">
+                            </div>
+                            <div class="form-group clearfix">
+                                <label class="fl"><span style="color:red;">*</span>手机号码</label>
+                                <input class="fl wth140" id="phoneNum" value="{{number}}" placeholder="手机号码">
+                                <label class="fl ml20">固定电话</label>
+                                <input class="fl wth140" placeholder="固定电话" name="tel">
+                            </div>
+                            <div class="form-group clearfix">
+                                <label class="fl">邮政编码</label>
+                                <input class="fl wth140" placeholder="邮政编码">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="addres_btn_ok_wrap">
+                        <a href="javascript:;" class="addres_btn_ok">确认</a>
+                    </div>
+                </div>
+            </div>
+            <script src="/js/moudle/selectAddr.js">
+        </script>
+        </script>
+    </div>
+    <div id="wrap_popup"></div>
+    <script src="/libs/require/require.js" data-main="/js/pay.js"></script>
+
+</body>
+
+</html>

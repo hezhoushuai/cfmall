@@ -1,0 +1,159 @@
+body {
+    position: relative;
+}
+
+#web_loginbox {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.4);
+    color: #333333;
+}
+
+#web_loginbox .web_login {
+    position: fixed;
+    z-index: 999;
+    width: 622px;
+    height: 485px;
+    opacity: 1;
+    background-color: #f1f1f1;
+}
+
+#web_loginbox .web_login .web_login_top {
+    width: 100%;
+}
+
+#web_loginbox .web_login .web_login_top ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#web_loginbox .web_login .web_login_top ul li {
+    width: 50%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: #f1f1f1;
+    color: rgb(177, 177, 177);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#web_loginbox .web_login .web_login_top ul .ac {
+    background-color: #31a4f6;
+    color: #fff;
+}
+
+#web_loginbox .web_login .web_login_main p:nth-child(1) {
+    margin: 12px 0;
+    text-align: center;
+    color: #a2a2a2;
+    font-size: 12px;
+}
+
+#login_method .ico-comm3 {
+    width: 24px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(/imgs/head/sprite_login.png) no-repeat;
+}
+
+#login_method .ico-qqlogin {
+    width: 20px;
+    background-position: -180px -90px;
+}
+
+#login_method .ico-wxlogin {
+    background-position: -220px -90px;
+}
+
+#login_method a {
+    width: 47px;
+    height: 28px;
+    background: url(/imgs/head/sprite_login.png) no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#web_loginbox .web_login .web_login_main form {
+    width: 622px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 46px;
+
+}
+
+#web_loginbox .web_login .web_login_main form p:first-child {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+#web_loginbox .web_login .web_login_main form p:nth-child(2) {
+    font-size: 16px;
+    color: #666;
+}
+
+#web_loginbox .web_login .web_login_main form p:nth-child(2) a {
+    color: #3481cf;
+}
+
+#web_loginbox .web_login .web_login_main form input {
+    width: 268px;
+    height: 38px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 10px;
+    border-radius: 3px;
+    border: 1px solid #d5d5d5;
+    outline-color: #31a4f6;
+}
+
+#web_loginbox .web_login .web_login_main form button {
+    width: 272px;
+    height: 40px;
+    background: #86ce2f;
+    color: #fff;
+    font-size: 17px;
+    letter-spacing: 2px;
+    border: 0;
+
+    border-radius: 3px;
+}
+
+#web_loginbox .web_login .web_login_foot {
+    width: 100%;
+    margin-top: 78px;
+}
+
+#web_loginbox .web_login .web_login_foot ul {
+    float: right;
+    display: flex;
+
+}
+
+#web_loginbox .web_login .web_login_foot ul li {
+    width: 80px;
+    font-size: 12px;
+    text-align: center;
+    color: rgb(102, 102, 102);
+    border-right: 1px solid rgb(102, 102, 102);
+}
+
+#web_loginbox .web_login .web_login_foot ul li:last-child {
+    border: 0;
+}
+
+#web_loginbox .web_login .web_login_foot ul li a {
+
+    color: rgb(102, 102, 102)
+}

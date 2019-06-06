@@ -1,0 +1,14 @@
+require(["/js/main.js"],function(){
+    require(["jquery","template"],function($,template){
+        class List{
+            constructor(){
+                this.class_name =location.search.slice(location.search.indexOf("=") +1,location.search.length-1) ;
+                console.log(this.class_name)
+            }
+            init(){
+                location
+            }
+        }
+        new List();
+    })
+})

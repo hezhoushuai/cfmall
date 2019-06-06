@@ -1,0 +1,196 @@
+@import 'basic.scss';
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.wrap {
+    display: flex;
+}
+
+.wrap .left {
+    width: 38%;
+    height: 100%;
+}
+
+.wrap .right {
+    width: 62%;
+    height: 100%;
+}
+
+.wrap .right .top_menu {}
+
+.wrap .right .top_menu ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.wrap .right .top_menu ul li {
+    width: 130px;
+    height: 54px;
+    line-height: 54px;
+}
+
+.wrap .right .top_menu ul li img {
+    vertical-align: middle;
+
+
+}
+
+.wrap .right .top_menu ul li:first-child {
+    position: relative;
+}
+
+.wrap .right .top_menu ul li:first-child img {
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    z-index: 1;
+}
+
+.wrap .right .top_menu ul li:first-child span {
+    border-radius: 6px;
+    background: linear-gradient(126deg, #fc4754, #ff794c) #f54444;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    margin: 10px 0 0 5px;
+    padding: 0 10px 0 24px;
+    color: #fff;
+    font-weight: 300;
+    display: inline-block;
+}
+
+.wrap .right .top_menu ul li span:hover {
+    color: #2b72ff;
+}
+
+.wrap .right .mid,
+.footer {
+    width: 480px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.wrap {
+    font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+
+}
+
+.wrap .right .mid h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.wrap .right h2 {
+    font-size: 28px;
+    margin-bottom: 64px;
+    color: #333;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrap .right h2 a {
+    color: #2b72ff;
+    font-size: 24px;
+}
+
+.wrap .right form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wrap .right form input {
+    width: 480px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    color: #aaa;
+}
+
+.wrap .right form input:hover {
+    border-color: #777;
+}
+
+.wrap .right form #selector {
+    width: 154px;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.wrap .right form #phone_number {
+    width: 307px;
+    margin-left: 14px;
+    margin-bottom: 0;
+
+}
+
+.wrap .right form .detail {
+    font-size: 14px;
+    color: #999;
+
+}
+
+.wrap .right form .submit {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #3580eb;
+    background-image: linear-gradient(0deg, #3580eb, #2c79eb);
+    border: 1px #3083ff solid;
+    box-shadow: 0 5px 8px 0 rgba(24, 95, 255, .1);
+    color: #fff;
+    font-weight: lighter;
+    height: 60px;
+    line-height: 60px;
+    margin: 40px 0 24px;
+    font-size: 24px;
+}
+.agreement{
+    font-size: 13px;
+    color: #aaa;
+}
+.wrap .right form label{
+    display: inline-block;
+    height: 18px;
+    line-height: 18px;
+}
+.wrap .right form .checkbox{
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    vertical-align: middle;
+}
+.wrap .left{
+    overflow: hidden;
+}
+.wrap .left img{
+    height: 100%;
+}
+.wrap .right {
+    overflow: auto;
+}
+.wrap .right .footer{
+    margin-top: 210px;
+    font-size: 14px;
+    color: #bbb;
+    text-align: center;
+    font-weight: lighter;
+}
